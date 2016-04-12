@@ -1,0 +1,23 @@
+{
+  "autoload": {
+    "psr-0": {
+      "": "src/"
+    }
+  },
+  "require": {
+    "symfony/dependency-injection":"3.*",
+    "symfony/http-foundation":"3.*",
+    "symfony/http-kernel":"3.*",
+    "symfony/event-dispatcher":"3.*",
+    "symfony/routing":"3.*",
+    "symfony/translation": "3.*",
+    "symfony/templating": "3.*",
+    "symfony/config": "3.*",
+    "symfony/console": "3.*",
+    "symfony/process": "3.*",
+    "symfony/filesystem" : "3.*",
+    "symfony/serializer": "3.*",
+    "symfony/validator": "3.*",
+    "symfony/var-dumper": "3.*"
+  }
+}
