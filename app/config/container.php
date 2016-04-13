@@ -30,8 +30,10 @@ $container->setDefinition('request_factory', new Definition('Symfony\Component\H
 $container->setDefinition('request', new Definition('Symfony\Component\HttpFoundation\Request'))
     ->setFactory([new Reference('request_factory'), 'createFromGlobals']);
 
+require_once 'routes.php';
+
 $container->register('route_collection', 'Symfony\Component\Routing\RouteCollection');
 $container->register('matcher', 'Symfony\Component\Routing\Matcher\UrlMatcher')
-    ->setArguments([new Reference('route_collection'), new Reference('context')]);
+    ->setArguments([$collection, new Reference('context')]);
 
 $container->compile();

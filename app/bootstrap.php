@@ -1,6 +1,6 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/dependency_injection/main.php';
+require __DIR__ . '/config/container.php';
 
 return $container;
