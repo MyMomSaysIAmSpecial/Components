@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "61327d2b1c5593065a3538badd5ab31c",
+    "content-hash": "a4e2ca94e011e7740a04827f6114908e",
     "packages": [
         {
             "name": "psr/log",
