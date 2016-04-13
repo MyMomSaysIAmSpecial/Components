@@ -2,9 +2,9 @@
 
 namespace Components\Controller;
 
-class ExampleController extends BaseController
+class AppController extends BaseController
 {
-    public function Magic()
+    public function indexAction()
     {
         return $this->render('It works!');
     }

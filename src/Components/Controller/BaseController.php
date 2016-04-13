@@ -10,8 +10,12 @@ class BaseController implements ContainerAwareInterface
 {
     use ContainerAwareTrait;
 
-    public function render($content)
+    public function render($path, $data = [])
     {
-        return new Response($content);
+//        return $this->container->get('templating')->renderResponse($path, $data);
+
+        dump($this->container);
+
+        return new Response('');
     }
 }

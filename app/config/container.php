@@ -30,10 +30,20 @@ $container->setDefinition('request_factory', new Definition('Symfony\Component\H
 $container->setDefinition('request', new Definition('Symfony\Component\HttpFoundation\Request'))
     ->setFactory([new Reference('request_factory'), 'createFromGlobals']);
 
-require_once 'routes.php';
-
-$container->register('route_collection', 'Symfony\Component\Routing\RouteCollection');
+//$container->register('route_collection', 'Symfony\Component\Routing\RouteCollection');
 $container->register('matcher', 'Symfony\Component\Routing\Matcher\UrlMatcher')
     ->setArguments([$collection, new Reference('context')]);
+
+$container->register('templating', 'Symfony\Component\Templating\PhpEngine')
+    ->setArguments(
+        [
+            new Reference('template_parser'),
+            new Reference('template_loader')
+        ]
+    );
+
+$container->register('template_parser', 'Symfony\Component\Templating\TemplateNameParser');
+$container->register('template_loader', 'Symfony\Component\Templating\Loader\FilesystemLoader')
+    ->addArgument('../src/Components/View/Template/%%name%%');
 
 $container->compile();
